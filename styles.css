@@ -69,6 +69,7 @@ button {
 
 .delete-button {
   background-color: #f44336;
+  margin-left: 5px;
 }
 
 .expense-summary {
