@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Expense Summary</title>
+</head>
+<body>
+
+    <h1>Expense Summary</h1>
+    <button onclick="downloadSummary()">Download Expense Summary</button>
+    <!-- Expense Summary Table -->
+    <table id="expenseSummary">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="expenseTableBody">
+        </tbody>
+    </table>
+
+    <!-- Download Button -->
+    <button onclick="navigateToSummary()">GoTO Add Expense</button>
+
+    <script>
+        let db;
+
+        // Open or create the IndexedDB
+        let request = indexedDB.open("ExpensesDB", 1);
+
+        request.onerror = function(event) {
+            console.log("Database error: " + event.target.errorCode);
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            fetchExpenses();
+        };
+
+        // Function to fetch and display expenses
+        function fetchExpenses() {
+            let transaction = db.transaction(["expenses"], "readonly");
+            let store = transaction.objectStore("expenses");
+            let request = store.getAll();
+
+            request.onsuccess = function(event) {
+                let expenses = event.target.result;
+                displayExpenses(expenses);
+            };
+        }
+
+        // Function to display expenses
+        function displayExpenses(expenses) {
+            const tbody = document.getElementById('expenseTableBody');
+            tbody.innerHTML = '';
+
+            expenses.forEach(expense => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${expense.amount}</td>
+                    <td>${expense.description}</td>
+                    <td>${expense.category}</td>
+                    <td>${expense.date}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Function to download the summary
+        function downloadSummary() {
+            let transaction = db.transaction(["expenses"], "readonly");
+            let store = transaction.objectStore("expenses");
+            let request = store.getAll();
+
+            request.onsuccess = function(event) {
+                const expenses = event.target.result;
+                const data = expenses.map(e => [e.amount, e.description, e.category, e.date]);
+                const csvContent = `Amount,Description,Category,Date\n${data.map(e => e.join(',')).join('\n')}`;
+
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.setAttribute('download', 'expenses_summary.csv');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+        }
+
+        function navigateToSummary() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
