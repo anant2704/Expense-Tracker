@@ -29,19 +29,12 @@ To run this web application:
 
 - Visit: [Expense Tracker](https://anant2704.github.io/Expense-Tracker/)
 
-### Screenshots
-
-- **Home Page**
-  ![Home Page](home.jpg){:width="400px" height="300px"}
-
-- **Summary Page**
-  ![Summary Page](summary.jpg){:width="400px" height="300px"}
-
 ---
 
 ## Contributing
 
 If you would like to contribute to this project, feel free to fork the repository and submit a pull request. 
+
 ---
 
 ## Contact
