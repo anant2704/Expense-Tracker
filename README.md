@@ -1,4 +1,4 @@
-![Expense Tracker](home.jpg)(summary.jpg)
+## Expense Tracker
 
 ## About the Project
 
@@ -29,5 +29,5 @@ To run this web application:
 
 Run this link - https://anant2704.github.io/Expense-Tracker/
 
-
+![Home Page](home.jpg) ![Summary Page](summary.jpg)
 
