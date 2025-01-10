@@ -2,7 +2,7 @@
 
 ## About the Project
 
-**Expense Tracker** is a simple and intuitive application designed to help users manage and track their daily expenses. This project allows users to add, view, and manage their expenses efficiently, providing overview into their financial habits.
+**Expense Tracker** is a simple and intuitive application designed to help users manage and track their daily expenses. This project allows users to add, view, and manage their expenses efficiently, providing an overview into their financial habits.
 
 ---
 
@@ -27,7 +27,26 @@
 
 To run this web application:
 
-Run this link - https://anant2704.github.io/Expense-Tracker/
+- Visit: [Expense Tracker](https://anant2704.github.io/Expense-Tracker/)
 
-![Home Page](home.jpg) ![Summary Page](summary.jpg)
+### Screenshots
 
+- **Home Page**
+  ![Home Page](home.jpg)
+
+- **Summary Page**
+  ![Summary Page](summary.jpg)
+
+---
+
+## Contributing
+
+If you would like to contribute to this project, feel free to fork the repository and submit a pull request. 
+---
+
+## Contact
+
+- **Author**: [Anant Joshi]  
+- **GitHub**: [anant2704](https://github.com/anant2704)  
+
+---
