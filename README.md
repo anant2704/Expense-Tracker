@@ -1,4 +1,4 @@
-### Expense Tracker
+# Expense Tracker
 
 ## About the Project
 
