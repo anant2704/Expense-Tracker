@@ -32,10 +32,10 @@ To run this web application:
 ### Screenshots
 
 - **Home Page**
-  ![Home Page](home.jpg)
+  ![Home Page](home.jpg){:width="400px" height="300px"}
 
 - **Summary Page**
-  ![Summary Page](summary.jpg)
+  ![Summary Page](summary.jpg){:width="400px" height="300px"}
 
 ---
 
@@ -46,7 +46,7 @@ If you would like to contribute to this project, feel free to fork the repositor
 
 ## Contact
 
-- **Author**: [Anant Joshi]  
+- **Author**: Anant Joshi 
 - **GitHub**: [anant2704](https://github.com/anant2704)  
 
 ---
